@@ -55,7 +55,7 @@ pipeline {
             attachLog:true,
             subject:"${currentBuild.result}",
             mimeType: 'text/html',
-            body:"Project: ${env.JOB_NAME}<br/>" + 
+            body:"Project Name: ${env.JOB_NAME}<br/>" + 
                  "Build Number: ${env.BUILD_NUMBER}<br/>" +
                  "URL: ${env.BUILD_URL}<br/>" ,
             to: 'prakashkumar5332@gmail.com',
