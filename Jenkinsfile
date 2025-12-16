@@ -54,7 +54,12 @@ pipeline {
         }
         stage('Deploy to docker'){
             steps {
-                sh 'docker compose up -d'
+                sh '''
+                docker compose pull
+                docker compose down --remove-orphans
+                docker compose up -d --build
+                
+                '''
             }
         }
     }
