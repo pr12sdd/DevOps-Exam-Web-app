@@ -52,6 +52,11 @@ pipeline {
                 }
             }
         }
+        stage('Docker image scan'){
+            steps{
+                sh "trivy image pkmadhubani/devops-exam-app:latest > trivyimage.txt"
+            }
+        }
         stage('Deploy to docker'){
             steps {
                 sh '''
@@ -74,7 +79,7 @@ pipeline {
                  "Build Number: ${env.BUILD_NUMBER}<br/>" +
                  "URL: ${env.BUILD_URL}<br/>" ,
             to: 'prakashkumar5332@gmail.com',
-            attachmentsPattern:'trivyfs.txt'
+            attachmentsPattern:'trivyfs.txt,trivyimage.txt'
             )
         }
     }
