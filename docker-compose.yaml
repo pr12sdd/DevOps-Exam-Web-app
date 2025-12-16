@@ -1,8 +1,7 @@
 version: "3.8"
 services:
   python-app:
-    build:
-      context: ./backend
+    image: pkmadhubani/devops-exam-app:latest
     container_name: python-appplication
     ports:
       - "5000:5000"

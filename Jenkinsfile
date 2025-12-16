@@ -42,6 +42,16 @@ pipeline {
                 sh 'trivy fs . > trivyfs.txt'
             }
         }
+        stage('Docker build and push'){
+            steps {
+                script {
+                    withDockerRegistry(credentialsId:'docker',toolName:'docker'){
+                        sh "docker build -t pkmadhubani/devops-exam-app:latest backend/"
+                        sh "docker push pkmadhubani/devops-exam-app:latest"
+                    }
+                }
+            }
+        }
         stage('Deploy to docker'){
             steps {
                 sh 'docker compose up -d'
