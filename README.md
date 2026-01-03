@@ -8,17 +8,17 @@
 ```
   terraform/
 ├── providers.tf      # AWS provider and region
-├── main.tf           # EC2 instance, key pair, security group , vpc
-├── outputs.tf        # Public IP output
-└── variables.tf      # Customizable variables
+├── ec2.tf           # EC2 instance, key pair, security group , vpc
+├── output.tf        # Public IP output
+├── terraform.tf     # AWS provider and remote backend configuration   
+└── variable.tf      # Customizable variables
 ```
 ```
   terraform-backend/
 ├── providers.tf      # AWS provider and region
 ├── s3.tf             # s3 bucket
-├── dynamodbtable.tf  # dynamodb table
-├── outputs.tf        # Public IP output
-└── variables.tf      # Customizable variables
+├── dynamodb.tf       # dynamodb table       
+└── terraform.tf      # AWS provider configuration
 ```
 ### How to proceed
 1. Create the folder: `mkdir terraform && cd terraform`
@@ -65,11 +65,9 @@
 - Build and run your application using Docker containers:
     
     ```bash
-    docker build -t netflix .
-    docker run -d --name netflix -p 8081:80 netflix:latest
+    docker compose up
     ```
 - For deleting:
    ```bash
-    docker stop <containerid>
-    docker rmi -f netflix
+    docker compose down
    ```
