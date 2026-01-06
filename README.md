@@ -1,4 +1,4 @@
-
+---
 # Required! - Title of your blog
 title: Deploy DevOps-Exam-Web-App on Docker Container using Jenkins
 
@@ -32,6 +32,7 @@ enableTableOfContent: true
 
 # Optional? - Default value is true
 isNewsletterActivated: true
+
 ---
 # Deploy DevOps-Exam-Web-App on Docker Container using Jenkins - DevOps Project!
 
