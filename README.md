@@ -71,3 +71,10 @@
    ```bash
     docker compose down
    ```
+**Step 4: Build Docker image from dockerfile and push it to dockerHub:**
+- Build your docker image from the dockerfile:
+  ```bash
+  docker build -t pkmadhubani/docker-image-name .
+  docker push pkmadhubani/docker-image-name
+  ```
+### **Phase 2: Building jenkins pipeline for automating the integration and deployment of application to docker container.**
