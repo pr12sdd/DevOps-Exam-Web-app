@@ -1,3 +1,38 @@
+---
+# Required! - Title of your blog
+title: Deploy DevOps-Exam-Web-App on Docker Container using Jenkins
+
+# This is a flag with a boolean value
+# Will not publish the blog until it's true
+# Recommended! 
+publish: true
+
+# Recommended? - The description of the blog
+description: Automating the deployment of DevOps-Exam-Web-App using Jenkins Declaritive Pipeline.
+
+# Recommended! - Provide the relative imageUrl
+cover_image: ./assets/Screenshot from 2025-12-16 18-22-37.png
+
+# Required! - Keywords or hashtags related to your blog
+tags:
+  - DevOps
+  - Kubernetes
+  - Jenkins
+  - Docker
+  - DevOps Post
+
+# Optional? - Provide if you have published the blog before
+# originalArticleURL: "https://example.com/blog/example-title-blog" 
+# Optional? - Subtitle for the blog
+# subtitle: A simple test article. 
+
+
+# Optional? - Default value is true
+enableTableOfContent: true
+
+# Optional? - Default value is true
+isNewsletterActivated: true
+---
 # Deploy DevOps-Exam-Web-App on Docker Container using Jenkins - DevOps Project!
 
 ### **Phase 1: Initial Setup and Deployment**
