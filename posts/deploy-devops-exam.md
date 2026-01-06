@@ -2,7 +2,7 @@
 title: Deploy DevOps-Exam-Web-App on Docker Container using Jenkins
 publish: true
 description: Automating the deployment of DevOps-Exam-Web-App using Jenkins Declaritive Pipeline.
-cover_image: ./assets/Screenshot from 2025-12-16 18-22-37.png
+cover_image: ./assets/cover.png
 tags:
   - DevOps
   - Kubernetes
