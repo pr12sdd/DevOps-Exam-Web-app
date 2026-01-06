@@ -1,21 +1,43 @@
-name: Publish-on-hashnode
+# name: Publish-on-hashnode
+# on:
+#   push:
+#     branches: [main]
+#   pull_request:
+#     branches: [main]
+# jobs:
+#   publish:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Code Checkout
+#         uses: actions/checkout@v4
+#       - name: Hashnode publish
+#         uses: raunakgurud09/hashnode-publish@v1.1
+#         id: publish_hashnode
+#         with:
+#           hashnode_key: ${{secrets.HASHNODE_KEY}}
+#           file: "posts/deploy-devops-exam.md"
+#           host: "prakash5.hashnode.dev"
+#       - name: Get Output
+#         run: echo "${{steps.publish_hashnode.outputs.result_json}} length ${{steps.publish_hashnode.outputs.result_summary}}"
+
+
+name: Publish to Hashnode
 on:
   push:
     branches: [main]
-  pull_request:
-    branches: [main]
+    paths:
+      - 'posts/deploy-devops-exam.md'  # Ya jo folder bana raha hai
+
 jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
-      - name: Code Checkout
-        uses: actions/checkout@v4
-      - name: Hashnode publish
-        uses: raunakgurud09/hashnode-publish@v1.1
-        id: publish_hashnode
+      - uses: actions/checkout@v4
+
+      - name: Publish to Hashnode
+        uses: prettyirrelevant/hashnode-posts-publisher@v0.1.3
         with:
-          hashnode_key: ${{secrets.HASHNODE_KEY}}
-          file: "posts/deploy-devops-exam.md"
-          host: "prakash5.hashnode.dev"
-      - name: Get Output
-        run: echo "${{steps.publish_hashnode.outputs.result_json}} length ${{steps.publish_hashnode.outputs.result_summary}}"
+          posts-directory: posts  # Ya posts
+          supported-formats: md
+          access-token: ${{ secrets.HASHNODE_TOKEN }}  # Naya token bana
+          publication-id: 6957cccce1d206d63d2a651d  # Hashnode dashboard > Settings > Publication ID dekh
