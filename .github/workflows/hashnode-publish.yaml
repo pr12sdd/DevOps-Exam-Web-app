@@ -15,7 +15,7 @@ jobs:
         id: publish_hashnode
         with:
           hashnode_key: ${{secrets.HASHNODE_KEY}}
-          file: "../../README.md"
+          file: "DevOps-Exam-Web-app/README.md"
           host: "prakash5.hashnode.dev"
       - name: Get Output
         run: echo "${{steps.publish_hashnode.outputs.result_json}} length ${{steps.publish_hashnode.outputs.result_summary}}"
