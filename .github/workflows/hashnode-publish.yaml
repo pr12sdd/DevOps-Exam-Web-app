@@ -1,0 +1,21 @@
+name: Publish-on-hashnode
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Code Checkout
+        uses: actions/checkout@v4
+      - name: Hashnode publish
+        uses: raunakgurud09/hashnode-publish@v1.1
+        id: publish_hashnode
+        with:
+          hashnode_key: ${{secrets.HASHNODE_KEY}}
+          file: "../../README.md"
+          host: "prakash5.hashnode.dev"
+      - name: Get Output
+        run: echo "${{steps.publish_hashnode.outputs.result_json}} length ${{steps.publish_hashnode.outputs.result_summary}}"
