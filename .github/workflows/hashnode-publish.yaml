@@ -2,9 +2,10 @@ name: Publish to Hashnode
 
 on:
   push:
-    branches: [ main ]  
+    branches: [ main ]
     paths:
-      - 'posts/**/*.md'  
+      - 'posts/**/*.md'  # Sirf posts folder changes pe run
+
 jobs:
   publish:
     runs-on: ubuntu-latest
@@ -13,8 +14,8 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Publish to Hashnode
-        uses: hashnode-publish@latest  
+        uses: raunakgurud09/hashnode-publish@v1.1  # Latest working version
         with:
-          token: ${{ secrets.HASHNODE_KEY }}
-          publication: ${{ secrets.HASHNODE_PUBLICATION_ID }}
-          path: posts/**/*.md
+          hashnode_key: ${{ secrets.HASHNODE_KEY }}  # Tera secret name
+          file: 'posts/*.md'  # Ya specific file jaise posts/jenkins-deploy.md
+          host: prakash5.hashnode.dev
