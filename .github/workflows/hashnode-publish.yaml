@@ -14,8 +14,8 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Publish to Hashnode
-        uses: raunakgurud09/hashnode-publish@v1.1  # Latest working version
+        uses: OmenApps/publish-github-to-hashnode@v1
         with:
-          hashnode_key: ${{ secrets.HASHNODE_KEY }} 
-          file: 'posts/*.md'  
-          host: prakash5.hashnode.dev
+          token: ${{ secrets.HASHNODE_KEY }}
+          publication: prakash5
+          path: posts/**/*.md
