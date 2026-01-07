@@ -4,7 +4,7 @@
 
 **Step 1: Provision EC2 (Ubuntu 22.04) using Terraform:**
 
-<img width="1280" height="582" alt="image" src="./assets/Screenshot from 2025-12-16 18-22-37.png" />
+<img width="1280" height="582" alt="image" src="./assets/cover.png" />
 
 
 - Create a directory with the following structure.
